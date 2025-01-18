@@ -1,5 +1,5 @@
 import Header from "./Header";
-
+import {Link} from 'react-router-dom'
 function Dashboard() {
 
   return (
@@ -45,6 +45,7 @@ function Dashboard() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Event Card */}
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+              <Link to="/event/quiz-night">
                 <div className="flex items-center mb-4">
                   <div className="bg-blue-500 text-white p-3 rounded-full mr-4">
                     <svg
@@ -71,6 +72,7 @@ function Dashboard() {
                 </div>
                 <p className="text-gray-600 mb-2">📅 Date: January 20, 2025</p>
                 <p className="text-gray-600">⏰ Time: 7:00 PM - 9:00 PM</p>
+                </Link>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
                 <div className="flex items-center mb-4">
