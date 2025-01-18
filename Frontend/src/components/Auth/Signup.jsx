@@ -12,6 +12,7 @@ function Signup() {
   });
   const [errors, setErrors] = useState({});
   const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -38,14 +39,19 @@ function Signup() {
       setErrors(formErrors);
       return;
     }
+    setIsLoading(true);
     try {
       const response = await axios.post(
-        "https://two198.onrender.com/user/signup",
+        "https://two198-1.onrender.com/user/signup",
         formData
       );
+      // console.log(response.data)
       setMessage("Signup successful! Your unique code is: " + response.data.uniqueCode);
     } catch (error) {
       setMessage("Signup failed. Please try again.");
+      console.error("Error during signup:", error.response ? error.response.data : error.message);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -71,6 +77,7 @@ function Signup() {
               value={formData.username}
               onChange={handleChange}
               className="w-full p-3 border rounded-lg mb-3 text-gray-700 focus:outline-none focus:ring focus:ring-blue-300"
+              disabled={isLoading}
             />
             {errors.username && <p className="text-red-500 text-sm">{errors.username}</p>}
             <input
@@ -80,6 +87,7 @@ function Signup() {
               value={formData.age}
               onChange={handleChange}
               className="w-full p-3 border rounded-lg mb-3 text-gray-700 focus:outline-none focus:ring focus:ring-blue-300"
+              disabled={isLoading}
             />
             {errors.age && <p className="text-red-500 text-sm">{errors.age}</p>}
             <select
@@ -87,6 +95,7 @@ function Signup() {
               value={formData.gender}
               onChange={handleChange}
               className="w-full p-3 border rounded-lg mb-3 text-gray-700 focus:outline-none focus:ring focus:ring-blue-300"
+              disabled={isLoading}
             >
               <option value="" disabled>
                 Gender
@@ -103,6 +112,7 @@ function Signup() {
               value={formData.email}
               onChange={handleChange}
               className="w-full p-3 border rounded-lg mb-3 text-gray-700 focus:outline-none focus:ring focus:ring-blue-300"
+              disabled={isLoading}
             />
             {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
             <input
@@ -112,13 +122,15 @@ function Signup() {
               value={formData.password}
               onChange={handleChange}
               className="w-full p-3 border rounded-lg mb-3 text-gray-700 focus:outline-none focus:ring focus:ring-blue-300"
+              disabled={isLoading}
             />
             {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring focus:ring-blue-300"
+              className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 focus:outline-none"
+              disabled={isLoading}
             >
-              Sign Up
+              {isLoading ? "Signing Up..." : "Sign Up"}
             </button>
           </form>
           {message && (
