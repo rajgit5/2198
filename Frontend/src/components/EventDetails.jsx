@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 
 function EventDetails() {
   const { eventId } = useParams();
@@ -87,24 +87,29 @@ function EventDetails() {
           </button>
         </div>
       ) : (
-        <div className="bg-white shadow-md rounded-lg p-8">
-          <h1>Stay Active All the Member Coming</h1>
-          <h1 className="text-3xl font-bold mb-4">{event.name}</h1>
-          <div className="mb-4">
-            <p className="text-gray-600"><strong>📅 Date:</strong> {event.date}</p>
-            <p className="text-gray-600"><strong>⏰ Time:</strong> {event.time}</p>
-          </div>
-          <p className="text-gray-600 mb-6">{event.description}</p>
-          <h2 className="text-xl font-semibold mb-2">Highlights:</h2>
-          <ul className="list-disc list-inside mb-4">
-            {event.highlights &&
-              event.highlights.map((highlight, index) => (
-                <li key={index}>{highlight}</li>
-              ))}
-          </ul>
-          <h2 className="text-xl font-semibold mb-2">Additional Information:</h2>
-          <p className="text-gray-600">{event.additionalInfo}</p>
+        <div className="bg-white shadow-lg rounded-lg p-8 mx-auto max-w-lg">
+        <h1 className="mt-6 text-center text-2xl md:text-4xl font-semibold text-gray-800">
+          Start Chatting with Everyone Connected at this Event
+        </h1>
+        <p className="text-center text-gray-600 mt-4">
+          Connect, share, and communicate effortlessly with all participants.
+        </p>
+        <div className="mt-8 text-center">
+          <a 
+            href="https://tenantlandlordchat.onrender.com/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block"
+          >
+            <button 
+              className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium text-lg rounded-lg transition-all duration-300"
+            >
+              Start Chat
+            </button>
+          </a>
         </div>
+      </div>
+      
       )}
     </div>
   );
