@@ -31,7 +31,7 @@ function Profile() {
           }
         );
         const data = response.data.message;
-        console.log(response.data)
+        // console.log(response.data)
         // Update state with fetched data
         setId(data.uniqueCode || "");
         setHobbies(data.hobbies?.join(" ") || "");
@@ -57,6 +57,7 @@ function Profile() {
       governmentId: id,
       hobbies: hobbies.split(" ").map((hobby) => hobby.trim()),
       shortBio: bio,
+      uniqueCode: id,
     };
     console.log(profileData.hobbies);
     try {
@@ -70,8 +71,11 @@ function Profile() {
           },
         }
       );
-
-      window.location.reload()
+  
+      // Set the unique code in a cookie after a successful profile update
+      document.cookie = `uniqueCode=${id}; path=/;`;
+  
+      window.location.reload();
     } catch (error) {
       console.error(
         "Error updating profile:",
@@ -79,6 +83,7 @@ function Profile() {
       );
     }
   };
+  
 
   return (
     <>
@@ -118,9 +123,13 @@ function Profile() {
                 Profile Overview
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-blue-50 p-4 rounded-lg shadow-md">
+              <div className="bg-blue-50 p-4 rounded-lg shadow-md">
                   <p className="text-gray-700">
                     <span className="font-bold">Government ID:</span> {userData.governmentId}
+                  </p>
+                </div><div className="bg-blue-50 p-4 rounded-lg shadow-md">
+                  <p className="text-gray-700">
+                    <span className="font-bold">Unique Code:</span> {id}
                   </p>
                 </div>
                 <div className="bg-blue-50 p-4 rounded-lg shadow-md">

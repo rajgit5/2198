@@ -9,6 +9,7 @@ import Signup from "./components/Auth/Signup";
 import ForgotPass from "./components/Auth/ForgotPass";
 import About from "./components/Auth/About";
 import Contact from "./components/Auth/Contact";
+import EventDetails from "./components/EventDetails";
 function App() {
   return (
     <>
@@ -16,7 +17,7 @@ function App() {
         <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/event/:eventId" element={<Event/>} />
+        <Route path="/event/:eventId" element={<EventDetails/>} />
         <Route path="/" element={<Home/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />
