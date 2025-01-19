@@ -1,5 +1,11 @@
 # SocialSync Platform
 
+### Admin Panel Link:
+[Admin Panel](https://socialsync-admin.netlify.app/){:target="_blank"}
+
+### Deployed Link:
+[Website](https://socialsync-1.netlify.app/){:target="_blank"}
+
 ## Overview
 
 The **Event Connection Platform** fosters meaningful interactions during social gatherings. By using uniquely generated participant codes linked to wearable bands, attendees can:
@@ -46,14 +52,6 @@ This platform ensures secure user verification, simplifies in-person networking,
 - Nodemailer
 
 ---
-
-## Admin Panel
-
-### Admin Panel Link:
-[Admin Panel](https://socialsync-admin.netlify.app/)
-### Deployed Link:
-[Website](https://socialsync-1.netlify.app/)
-
 
 ### Instructions:
 
