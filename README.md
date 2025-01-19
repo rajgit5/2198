@@ -49,6 +49,7 @@ This platform ensures secure user verification, simplifies in-person networking,
 - Dotenv
 - Node.js
 - Nodemailer
+- Socket.io
 
 ---
 
