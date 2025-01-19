@@ -1,10 +1,9 @@
 # SocialSync Platform
 
 ### Admin Panel Link:
-[Admin Panel](https://socialsync-admin.netlify.app/){:target="_blank"}
-
+[Admin Panel](https://socialsync-admin.netlify.app/)
 ### Deployed Link:
-[Website](https://socialsync-1.netlify.app/){:target="_blank"}
+[Website](https://socialsync-1.netlify.app/)
 
 ## Overview
 
