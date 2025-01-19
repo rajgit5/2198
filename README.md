@@ -1,4 +1,4 @@
-# Event Connection Platform
+# SocialSync Platform
 
 ## Overview
 
